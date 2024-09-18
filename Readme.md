@@ -61,7 +61,7 @@ To use the Downloads Organizer, ensure the following dependencies are installed:
 Simply copy the line, paste it in a terminal and hit [Enter]. Thats it!
 
 ```bash
-wget -qO- https://your-server.com/install-organizer.sh | bash
+wget -qO- https://raw.githubusercontent.com/apapamarkou/downloads-organizer/main/src/direct-install | bash
 ```
 
 #### For Uninstallation:
@@ -69,8 +69,7 @@ wget -qO- https://your-server.com/install-organizer.sh | bash
 Simply copy the line, paste it in a terminal and hit [Enter].
 
 ```bash
-wget -qO- https://your-server.com/uninstall-organizer.sh | bash
-```
+wget -qO- https://raw.githubusercontent.com/apapamarkou/downloads-organizer/main/src/direct-uninstall | bash```
 
 ## Usage
 
