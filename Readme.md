@@ -8,7 +8,7 @@ When new files are detected, Downloads Organizer prompts you to optionally renam
 The tool features an intuitive GUI for configuring default folders for various file types and for enabling or disabling specific actions based on the type of downloaded files.
 
 ## Features
-- Automatically takes action for new files based on their type.
+- Automatically takes action for new downloaded files.
 - Configurable with a simple PyQt5-based GUI.
 - Supported file types :
     - Documents: txt|pdf|docx|odf|xls|xlsx
@@ -36,78 +36,44 @@ To use the Downloads Organizer, ensure the following dependencies are installed:
 
    ```
 
-- RedHat based distributions (Fedora, OpenSuSE, Alma Linyx etc):
+- RedHat based distributions (Fedora, OpenSuSE, Alma-Linux etc):
 
    ```bash
-   sudo apt install zenity inotify-tools python3-pyqt5
+   sudo dnf install zenity inotify-tools python3-pyqt5
 
    ```
 
+- Ach based distributions (Manjaro, Garuda, Archcraft etc):
 
+   ```bash
+   sudo pacman -S zenity inotify-tools python-pyqt5
+   ```
+   
+- Solus
+
+   ```bash
+   sudo pacman -S zenity inotify-tools python-pyqt5
+   ```
+  
 ## Installation
 
-### The Simple and Easy Way (Recommended)
+Simply copy the line, paste it in a terminal and hit [Enter]. Thats it!
 
-You can install the Downloads Organizer directly by using the following command:
-
-#### For Installation:
 ```bash
 wget -qO- https://your-server.com/install-organizer.sh | bash
 ```
 
 #### For Uninstallation:
+
+Simply copy the line, paste it in a terminal and hit [Enter].
+
 ```bash
 wget -qO- https://your-server.com/uninstall-organizer.sh | bash
 ```
 
-These commands will automatically install or uninstall the organizer, depending on your choice.
-
-### Manual Installation
-
-#### For Debian/Ubuntu-based Systems:
-1.
-
-2. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/downloads-organizer.git
-   cd downloads-organizer
-   ```
-
-3. Run the installer:
-   ```bash
-   chmod +x install.sh
-   ./install.sh
-   ```
-
-#### For RedHat/Fedora-based Systems:
-1. Install dependencies:
-   ```bash
-   sudo dnf install zenity inotify-tools python3-pyqt5
-   ```
-
-2. Follow the same steps for Debian/Ubuntu after dependency installation.
-
-#### For Arch-based Systems:
-1. Install dependencies:
-   ```bash
-   sudo pacman -S zenity inotify-tools python-pyqt5
-   ```
-
-2. Follow the same steps for Debian/Ubuntu after dependency installation.
-
-#### For Solus:
-1. Install dependencies:
-   ```bash
-   sudo eopkg install zenity inotify-tools python3-pyqt5
-   ```
-
-2. Follow the same steps for Debian/Ubuntu after dependency installation.
-
 ## Usage
 
-Once installed, Downloads Organizer will automatically monitor your Downloads folder. The GUI can be launched by searching for "Downloads Organizer Config" in your applications menu.
-
-You can configure the organizing rules and destination folders through the GUI.
+Once installed, Downloads Organizer will automatically monitor your Downloads folder running in the background. The configuration window can be launched by searching for "Downloads Organizer Config" in your applications menu.
 
 ## License
 
