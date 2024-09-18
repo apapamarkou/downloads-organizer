@@ -19,6 +19,7 @@
 # Define repository URL
 REPO_URL="https://github.com/apapamarkou/downloads-organizer.git"
 
+
 # Temporary project directory
 TEMP_DIR="$HOME/downloads-organizer"
 

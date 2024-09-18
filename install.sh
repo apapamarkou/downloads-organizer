@@ -49,12 +49,14 @@ show_terms_and_conditions() {
 # Function to copy files and set permissions
 install_files() {
     # Create the target directories
+    echo "Create the target directories"
     mkdir -p "$INSTALL_DIR"
     mkdir -p "$ICON_DIR"
     mkdir -p "$DESKTOP_DIR"
     mkdir -p "$AUTOSTART_DIR"
 
     # Copy scripts to the installation directory
+    echo "Copy scripts to the installation directory"
     cp "$SRC_DIR/downloads-organizer-archives.sh" "$INSTALL_DIR"
     cp "$SRC_DIR/downloads-organizer-documents.sh" "$INSTALL_DIR"
     cp "$SRC_DIR/downloads-organizer-packages.sh" "$INSTALL_DIR"
@@ -62,6 +64,7 @@ install_files() {
     cp "$SRC_DIR/downloads-observer.sh" "$INSTALL_DIR"
 
     # Set the scripts as executable
+    echo "Set the scripts as executable"
     chmod +x "$INSTALL_DIR/downloads-organizer-archives.sh"
     chmod +x "$INSTALL_DIR/downloads-organizer-documents.sh"
     chmod +x "$INSTALL_DIR/downloads-organizer-packages.sh"
@@ -69,9 +72,11 @@ install_files() {
     chmod +x "$INSTALL_DIR/downloads-observer.sh"
 
     # Copy the icon to the icons directory
+    echo "Copy the icon to the icons directory"
     cp "$SRC_DIR/downloads-organizer.png" "$ICON_DIR"
 
     # Create the .desktop file
+    echo "Create the .desktop file"
     DESKTOP_FILE="$DESKTOP_DIR/downloads-observer.desktop"
     echo "[Desktop Entry]
 Name=Downloads Organizer
@@ -82,10 +87,12 @@ Categories=Utility;
 " > "$DESKTOP_FILE"
 
     # Add to autostart
+    echo "Add to autostart"
     cp "$DESKTOP_FILE" "$AUTOSTART_DIR"
 
     # Run the observer script
-    nohup "$INSTALL_DIR/downloads-observer.sh" > /dev/null 2>&1 &
+    echo "Run the observer script"
+    "$INSTALL_DIR/downloads-observer.sh" &
 }
 
 # Function to thank the user
@@ -96,15 +103,19 @@ thank_user() {
 # Main function
 main() {
     # Check dependencies
+    echo "Check dependencies"
     check_dependencies
 
     # Show terms and conditions
+    echo "Show terms and conditions"
     show_terms_and_conditions
 
     # Run installation
+    echo "Run installation"
     install_files
 
     # Thank the user
+    echo "Thank the user"
     thank_user
 }
 
