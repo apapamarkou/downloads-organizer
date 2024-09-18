@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# Define repository URL
+REPO_URL="https://github.com/apapamarkou/downloads-organizer.git"
+
+# Temporary project directory
+TEMP_DIR="$HOME/downloads-organizer"
+
+# Step 1: Clone the project from GitHub
+echo "Cloning Downloads Organizer repository..."
+git clone "$REPO_URL" "$TEMP_DIR"
+
+# Check if clone was successful
+if [ ! -d "$TEMP_DIR" ]; then
+  echo "Error: Failed to clone the repository."
+  exit 1
+fi
+
+# Step 2: cd into the project directory
+cd "$TEMP_DIR" || { echo "Error: Could not enter the project directory."; exit 1; }
+
+# Step 3: Make install.sh executable and run it
+echo "Running the installer..."
+chmod +x install.sh
+./install.sh
+
+# Step 4: Clean up (remove the cloned project directory)
+echo "Cleaning up..."
+cd ..
+rm -rf "$TEMP_DIR"
+
+# Completion message
+echo "Downloads Organizer has been installed and the project directory cleaned up."
