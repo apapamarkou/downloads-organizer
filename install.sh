@@ -1,7 +1,26 @@
 #!/bin/bash
 
+#  ____                      _                 _
+# |  _ \  _____      ___ __ | | ___   __ _  __| |___
+# | | | |/ _ \ \ /\ / / '_ \| |/ _ \ / _` |/ _` / __|
+# | |_| | (_) \ V  V /| | | | | (_) | (_| | (_| \__ \
+# |____/ \___/ \_/\_/ |_| |_|_|\___/ \__,_|\__,_|___/
+#  / _ \ _ __ __ _  __ _ _ __ (_)_______ _ __
+# | | | | '__/ _` |/ _` | '_ \| |_  / _ \ '__|
+# | |_| | | | (_| | (_| | | | | |/ /  __/ |
+#  \___/|_|  \__, |\__,_|_| |_|_/___\___|_|
+#            |___/
+#
+# Author: Andrianos Papamarkou
+#
+# This script installs the Download Organizer application on a Linux system.
+# It checks for dependencies, displays a terms and conditions dialog, and copies
+# the necessary files to the appropriate locations.
+
+
+
 # Variables
-INSTALL_DIR="$HOME/.local/bin/download-organizer"
+INSTALL_DIR="$HOME/.local/bin/downloads-organizer"
 ICON_DIR="$HOME/.local/share/icons"
 DESKTOP_DIR="$HOME/.local/share/applications"
 AUTOSTART_DIR="$HOME/.config/autostart"
@@ -36,28 +55,28 @@ install_files() {
     mkdir -p "$AUTOSTART_DIR"
 
     # Copy scripts to the installation directory
-    cp "$SRC_DIR/download-organize-archives.sh" "$INSTALL_DIR"
-    cp "$SRC_DIR/download-organize-documents.sh" "$INSTALL_DIR"
-    cp "$SRC_DIR/download-organize-packages.sh" "$INSTALL_DIR"
-    cp "$SRC_DIR/download-organizer-config.py" "$INSTALL_DIR"
+    cp "$SRC_DIR/downloads-organizer-archives.sh" "$INSTALL_DIR"
+    cp "$SRC_DIR/downloads-organizer-documents.sh" "$INSTALL_DIR"
+    cp "$SRC_DIR/downloads-organizer-packages.sh" "$INSTALL_DIR"
+    cp "$SRC_DIR/downloads-organizer-config.py" "$INSTALL_DIR"
     cp "$SRC_DIR/downloads-observer.sh" "$INSTALL_DIR"
 
     # Set the scripts as executable
-    chmod +x "$INSTALL_DIR/download-organize-archives.sh"
-    chmod +x "$INSTALL_DIR/download-organize-documents.sh"
-    chmod +x "$INSTALL_DIR/download-organize-packages.sh"
-    chmod +x "$INSTALL_DIR/download-organizer-config.py"
+    chmod +x "$INSTALL_DIR/downloads-organizer-archives.sh"
+    chmod +x "$INSTALL_DIR/downloads-organizer-documents.sh"
+    chmod +x "$INSTALL_DIR/downloads-organizer-packages.sh"
+    chmod +x "$INSTALL_DIR/downloads-organizer-config.py"
     chmod +x "$INSTALL_DIR/downloads-observer.sh"
 
     # Copy the icon to the icons directory
-    cp "$SRC_DIR/download-organizer.png" "$ICON_DIR"
+    cp "$SRC_DIR/downloads-organizer.png" "$ICON_DIR"
 
     # Create the .desktop file
     DESKTOP_FILE="$DESKTOP_DIR/downloads-observer.desktop"
     echo "[Desktop Entry]
 Name=Downloads Organizer
 Exec=$INSTALL_DIR/downloads-observer.sh
-Icon=$ICON_DIR/download-organizer.png
+Icon=$ICON_DIR/downloads-organizer.png
 Type=Application
 Categories=Utility;
 " > "$DESKTOP_FILE"

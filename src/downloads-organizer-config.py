@@ -1,11 +1,44 @@
 #!/usr/bin/env python3
 
+#  ____                      _                 _
+# |  _ \  _____      ___ __ | | ___   __ _  __| |___
+# | | | |/ _ \ \ /\ / / '_ \| |/ _ \ / _` |/ _` / __|
+# | |_| | (_) \ V  V /| | | | | (_) | (_| | (_| \__ \
+# |____/ \___/ \_/\_/ |_| |_|_|\___/ \__,_|\__,_|___/
+#  / _ \ _ __ __ _  __ _ _ __ (_)_______ _ __
+# | | | | '__/ _` |/ _` | '_ \| |_  / _ \ '__|
+# | |_| | | | (_| | (_| | | | | |/ /  __/ |
+#  \___/|_|  \__, |\__,_|_| |_|_/___\___|_|
+#            |___/
+#
+# Author: Andrianos Papamarkou
+#
+# This script creates a graphical user interface (GUI) for configuring the download organizer.
+# It allows users to enable or disable organizing files based on their preferences,
+# such as documents, pictures, and videos. Users can also specify the folders where
+# the files should be organized.
+#
+# The configuration is stored in a file named 'organizer-config' in the user's home directory.
+# The script reads the configuration from this file and updates it when the user makes changes.
+#
+# Usage:
+#   python downloads-organizer-config.py
+#
+# Dependencies:
+#   PyQt5
+#
+# Note:
+#   This script assumes that the 'downloads-organizer' directory exists in the user's home directory (~/.local/bin).
+#   If the directory does not exist, it will be created.
+#
+
+from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QCheckBox, QPushButton, QFileDialog, QLabel, QHBoxLayout, QSpacerItem, QSizePolicy
 import sys
 import os
 import configparser
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QCheckBox, QPushButton, QFileDialog, QLabel, QHBoxLayout, QSpacerItem, QSizePolicy
 
-CONFIG_FILE = os.path.expanduser('~/.local/bin/download-organizer/organize-config')
+CONFIG_FILE = os.path.expanduser('~/.local/bin/downloads-organizer/organizer-config')
 
 class ConfigGUI(QWidget):
     def __init__(self):

@@ -1,6 +1,36 @@
 #!/bin/bash
 
-BIN_DIR="$HOME/.local/bin/download-organizer"
+#  ____                      _                 _
+# |  _ \  _____      ___ __ | | ___   __ _  __| |___
+# | | | |/ _ \ \ /\ / / '_ \| |/ _ \ / _` |/ _` / __|
+# | |_| | (_) \ V  V /| | | | | (_) | (_| | (_| \__ \
+# |____/ \___/ \_/\_/ |_| |_|_|\___/ \__,_|\__,_|___/
+#  / _ \ _ __ __ _  __ _ _ __ (_)_______ _ __
+# | | | | '__/ _` |/ _` | '_ \| |_  / _ \ '__|
+# | |_| | | | (_| | (_| | | | | |/ /  __/ |
+#  \___/|_|  \__, |\__,_|_| |_|_/___\___|_|
+#            |___/
+#
+# Author: Andrianos Papamarkou
+#
+# Description: This script monitors the Downloads directory for new files and
+#              organizes them based on their file extension.
+#              It reads the configuration from a file named downloads-organizer.conf
+#              located in the user's home directory.
+#              The configuration file should contain the following variables:
+#              organizeActive (true/false)
+#              documents (true/false)
+#              videos (true/false)
+#              pictures (true/false)
+#              images (true/false)
+#              packages (true/false)
+#              archives (true/false)
+#              documentsFolder (path)
+#              videosFolder (path)
+#              picturesFolder (path)
+#              imagesFolder (path)
+
+BIN_DIR="$HOME/.local/bin/downloads-organizer"
 CONFIG_FILE="$BIN_DIR/downloads-organizer.conf"
 WATCH_DIR="$HOME/Downloads"
 
@@ -28,37 +58,37 @@ do
             # Documents
             txt|pdf|docx|odf|xls|xlsx)
                 if [ "$documents" == "true" ]; then
-                    $BIN_DIR/download-organize-documents.sh "$FILEPATH" "document" "$documentsFolder"
+                    $BIN_DIR/downloads-organizer-documents.sh "$FILEPATH" "document" "$documentsFolder"
                 fi
                 ;;
             # Videos
             mp4|mkv|avi|flv|mov|wmv)
                 if [ "$videos" == "true" ]; then
-                    $BIN_DIR/download-organize-documents.sh "$FILEPATH" "video" "$videosFolder"
+                    $BIN_DIR/downloads-organizer-documents.sh "$FILEPATH" "video" "$videosFolder"
                 fi
                 ;;
             # Pictures
             jpg|jpeg|png|gif|bmp|tiff|svg|webp)
                 if [ "$pictures" == "true" ]; then
-                    $BIN_DIR/download-organize-documents.sh "$FILEPATH" "picture" "$picturesFolder"
+                    $BIN_DIR/downloads-organizer-documents.sh "$FILEPATH" "picture" "$picturesFolder"
                 fi
                 ;;
             # Images (ISO, IMG)
             iso|img)
                 if [ "$images" == "true" ]; then
-                    $BIN_DIR/download-organize-documents.sh "$FILEPATH" "image" "$imagesFolder"
+                    $BIN_DIR/downloads-organizer-documents.sh "$FILEPATH" "image" "$imagesFolder"
                 fi
                 ;;
             # Linux packages
             rpm|deb|AppImage)
                 if [ "$packages" == "true" ]; then
-                    $BIN_DIR/download-organize-packages.sh "$FILEPATH"
+                    $BIN_DIR/downloads-organizer-packages.sh "$FILEPATH"
                 fi
                 ;;
             # Archive files
             tar|gz|zip|7z|bz2|xz)
                 if [ "$archives" == "true" ]; then
-                    $BIN_DIR/download-organize-archives.sh "$FILEPATH"
+                    $BIN_DIR/downloads-organizer-archives.sh "$FILEPATH"
                 fi
                 ;;
             *)

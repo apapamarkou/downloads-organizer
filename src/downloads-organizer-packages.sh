@@ -1,5 +1,22 @@
 #!/bin/bash
 
+#  ____                      _                 _
+# |  _ \  _____      ___ __ | | ___   __ _  __| |___
+# | | | |/ _ \ \ /\ / / '_ \| |/ _ \ / _` |/ _` / __|
+# | |_| | (_) \ V  V /| | | | | (_) | (_| | (_| \__ \
+# |____/ \___/ \_/\_/ |_| |_|_|\___/ \__,_|\__,_|___/
+#  / _ \ _ __ __ _  __ _ _ __ (_)_______ _ __
+# | | | | '__/ _` |/ _` | '_ \| |_  / _ \ '__|
+# | |_| | | | (_| | (_| | | | | |/ /  __/ |
+#  \___/|_|  \__, |\__,_|_| |_|_/___\___|_|
+#            |___/
+#
+# Author: Andrianos Papamarkou
+#
+# Description: This script handles the installation of various package types
+#              (AppImage, RPM, DEB) based on the user's system and choice.
+#              It uses Zenity for GUI and supports cross-platform compatibility.
+
 FILEPATH="$1"
 FILENAME=$(basename "$FILEPATH")
 FILEEXT="${FILENAME##*.}"

@@ -1,8 +1,25 @@
 #!/bin/bash
 
+#  ____                      _                 _
+# |  _ \  _____      ___ __ | | ___   __ _  __| |___
+# | | | |/ _ \ \ /\ / / '_ \| |/ _ \ / _` |/ _` / __|
+# | |_| | (_) \ V  V /| | | | | (_) | (_| | (_| \__ \
+# |____/ \___/ \_/\_/ |_| |_|_|\___/ \__,_|\__,_|___/
+#  / _ \ _ __ __ _  __ _ _ __ (_)_______ _ __
+# | | | | '__/ _` |/ _` | '_ \| |_  / _ \ '__|
+# | |_| | | | (_| | (_| | | | | |/ /  __/ |
+#  \___/|_|  \__, |\__,_|_| |_|_/___\___|_|
+#            |___/
+#
+# Author: Andrianos Papamarkou
+#
+# Description: This script uninstalls the Downloads Organizer application.
+#              It stops the observer process, removes installed files, and
+#              shows a farewell message.
+
 # Variables
-INSTALL_DIR="$HOME/.local/bin/download-organizer"
-ICON_DIR="$HOME/.local/share/icons/download-organizer.png"
+INSTALL_DIR="$HOME/.local/bin/downloads-organizer"
+ICON_DIR="$HOME/.local/share/icons/downloads-organizer.png"
 DESKTOP_FILE="$HOME/.local/share/applications/downloads-observer.desktop"
 AUTOSTART_FILE="$HOME/.config/autostart/downloads-observer.desktop"
 OBSERVER_SCRIPT="$INSTALL_DIR/downloads-observer.sh"
