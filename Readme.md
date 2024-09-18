@@ -1,25 +1,48 @@
 
 # Downloads Organizer
 
-Downloads Organizer is a utility that organizes files in your Downloads directory based on file types (documents, videos, pictures, packages, archives, and more). It provides an easy-to-use GUI for configuring folders, and supports automation with inotifywait.
+**Downloads Organizer** is a background utility designed to keep your Downloads folder tidy and your home directory well-organized. It monitors incoming files in your Downloads directory and helps you manage them based on their types—such as documents, videos, pictures, packages, disk images and archives.
+
+When new files are detected, Downloads Organizer prompts you to optionally rename and move them to appropriate folders according to your preferences. For applications and packages, it will ask if you want to install them. For archives and compressed files, it offers to extract them and select the extraction location.
+
+The tool features an intuitive GUI for configuring default folders for various file types and for enabling or disabling specific actions based on the type of downloaded files.
 
 ## Features
-- Automatically sorts files based on their type.
-- Supports organizing documents, videos, images, packages, archives, and disk images.
+- Automatically takes action for new files based on their type.
 - Configurable with a simple PyQt5-based GUI.
-- Easily extensible for other file types.
+- Supported file types :
+    - Documents: txt|pdf|docx|odf|xls|xlsx
+    - Videos: mp4|mkv|avi|flv|mov|wmv
+    - Pictures: jpg|jpeg|png|gif|bmp|tiff|svg|webp
+    - Disk Images: iso|img
+    - Linux packages: rpm|deb|AppImage
+    - Archives: tar|gz|zip|7z|bz2|xz
 
-## Dependencies
+## Before installation
 
 To use the Downloads Organizer, ensure the following dependencies are installed:
 
-### Core Dependencies:
 - `zenity`
 - `inotify-tools` (for monitoring file changes)
-
-### GUI Dependencies:
 - Python 3.x
 - PyQt5: `python3-pyqt5`
+
+### How to install dependencies
+
+- Debian based distributions (Ubuntu, Mint, Zorin, MX-Linux etc):
+
+   ```bash
+   sudo apt install zenity inotify-tools python3-pyqt5
+
+   ```
+
+- RedHat based distributions (Fedora, OpenSuSE, Alma Linyx etc):
+
+   ```bash
+   sudo apt install zenity inotify-tools python3-pyqt5
+
+   ```
+
 
 ## Installation
 
@@ -42,10 +65,7 @@ These commands will automatically install or uninstall the organizer, depending 
 ### Manual Installation
 
 #### For Debian/Ubuntu-based Systems:
-1. Install dependencies:
-   ```bash
-   sudo apt install zenity inotify-tools python3-pyqt5
-   ```
+1.
 
 2. Clone the repository:
    ```bash
