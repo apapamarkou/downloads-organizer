@@ -26,33 +26,34 @@ To use the Downloads Organizer, ensure the following dependencies are installed:
 - `inotify-tools` (for monitoring file changes)
 - Python 3.x
 - PyQt5: `python3-pyqt5`
+- `wget`, `git` (for installation)
 
 ### How to install dependencies
 
 - Debian based distributions (Ubuntu, Mint, Zorin, MX-Linux etc):
 
    ```bash
-   sudo apt install zenity inotify-tools python3-pyqt5
+   sudo apt install zenity inotify-tools python3-pyqt5 git wget
 
    ```
 
 - RedHat based distributions (Fedora, OpenSuSE, Alma-Linux etc):
 
    ```bash
-   sudo dnf install zenity inotify-tools python3-pyqt5
+   sudo dnf install zenity inotify-tools python3-pyqt5 git wget
 
    ```
 
 - Ach based distributions (Manjaro, Garuda, Archcraft etc):
 
    ```bash
-   sudo pacman -S --needed zenity inotify-tools python-pyqt5
+   sudo pacman -S --needed zenity inotify-tools python-pyqt5 git wget
    ```
 
 - Solus
 
    ```bash
-   sudo pacman -S zenity inotify-tools python-pyqt5
+   sudo pacman -S zenity inotify-tools python-pyqt5 git wget
    ```
 
 ## Installation
