@@ -46,15 +46,15 @@ To use the Downloads Organizer, ensure the following dependencies are installed:
 - Ach based distributions (Manjaro, Garuda, Archcraft etc):
 
    ```bash
-   sudo pacman -S zenity inotify-tools python-pyqt5
+   sudo pacman -S --needed zenity inotify-tools python-pyqt5
    ```
-   
+
 - Solus
 
    ```bash
    sudo pacman -S zenity inotify-tools python-pyqt5
    ```
-  
+
 ## Installation
 
 Simply copy the line, paste it in a terminal and hit [Enter]. Thats it!
@@ -73,7 +73,7 @@ wget -qO- https://your-server.com/uninstall-organizer.sh | bash
 
 ## Usage
 
-Once installed, Downloads Organizer will automatically monitor your Downloads folder running in the background. The configuration window can be launched by searching for "Downloads Organizer Config" in your applications menu.
+Once installed, `Downloads Organizer` will automatically monitor your Downloads folder running in the background. It automatically starts on login. The configuration window can be launched by searching for `Downloads Organizer Config` in your applications menu.
 
 ## License
 
