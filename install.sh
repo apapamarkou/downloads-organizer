@@ -39,7 +39,7 @@ check_dependencies() {
 
 # Function to display terms and conditions
 show_terms_and_conditions() {
-    zenity --text-info --title="Terms and Conditions" --filename="$SRC_DIR/terms.txt" --checkbox="I agree to the terms and conditions" --width=500 --height=300
+    zenity --text-info --title="Terms and Conditions" --filename="$SRC_DIR/terms.txt" --checkbox="I agree to the terms and conditions" --width=650 --height=300
     if [ $? -ne 0 ]; then
         zenity --error --text="You must agree to the terms and conditions to proceed with installation." --width=300
         exit 1

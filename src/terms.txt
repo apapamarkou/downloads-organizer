@@ -37,3 +37,4 @@ Contributions to the Downloads Organizer project, including bug reports, feature
 9. Termination of Use
 
 The developers reserve the right to terminate support for any user found to be using the software in violation of these terms or in a manner that is harmful to others.
+
