@@ -22,11 +22,11 @@ The tool features an intuitive GUI for configuring default folders for various f
 
 To use the Downloads Organizer, ensure the following dependencies are installed:
 
-- `zenity`
-- `inotify-tools` (for monitoring file changes)
-- Python 3.x
-- PyQt5: `python3-pyqt5`
-- `wget`, `git` (for installation)
+- `[zenity](https://github.com/GNOME/zenity)`
+- `[inotify-tools](https://github.com/inotify-tools/inotify-tools)` (for monitoring file changes)
+- [Python](https://www.python.org/) 3.x
+- [PyQt5](https://pypi.org/project/PyQt5/): `python3-pyqt5`
+- `[wget](https://www.gnu.org/software/wget/)`, `[git](https://github.com/git/git)` (for installation)
 
 ### How to install dependencies
 
@@ -77,7 +77,7 @@ Once installed, **Downloads Organizer** will automatically monitor your Download
 ## License
 
 This project is licensed under the GNU General Public License v3.0.
-See the `LICENSE` file for more details.
+See the `[LICENSE](https://github.com/apapamarkou/downloads-organizer/blob/main/LICENSE)` file for more details.
 
 ## Contributing
 
