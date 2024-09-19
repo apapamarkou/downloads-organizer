@@ -98,8 +98,7 @@ Type=Application
 Categories=Utility;
 " > "$DESKTOP_FILE"
 
-    echo "[organize]
-organizeActive=true
+    echo "organizeActive=true
 documents=true
 documentsFolder=$HOME/Documents
 pictures=true
