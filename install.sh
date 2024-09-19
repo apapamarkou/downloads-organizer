@@ -102,8 +102,8 @@ Categories=Utility;
 
     echo "[organize]
 organizeActive=true
-documents=$HOME/Documents
-documentsFolder=true
+documents=true
+documentsFolder=$HOME/Documents
 pictures=true
 picturesFolder=$HOME/Pictures
 videos=true
