@@ -32,29 +32,27 @@ To use the Downloads Organizer, ensure the following dependencies are installed:
 
 - Debian based distributions (Ubuntu, Mint, Zorin, MX-Linux etc):
 
-   ```bash
-   sudo apt install zenity inotify-tools python3-pyqt5 git wget
-
-   ```
+```bash
+sudo apt install zenity inotify-tools python3-pyqt5 git wget
+```
 
 - RedHat based distributions (Fedora, OpenSuSE, Alma-Linux etc):
 
-   ```bash
-   sudo dnf install zenity inotify-tools python3-pyqt5 git wget
-
-   ```
+```bash
+sudo dnf install zenity inotify-tools python3-pyqt5 git wget
+```
 
 - Ach based distributions (Manjaro, Garuda, Archcraft etc):
 
-   ```bash
-   sudo pacman -S --needed zenity inotify-tools python-pyqt5 git wget
-   ```
+```bash
+sudo pacman -S --needed zenity inotify-tools python-pyqt5 git wget
+```
 
 - Solus
 
-   ```bash
-   sudo pacman -S zenity inotify-tools python-pyqt5 git wget
-   ```
+```bash
+sudo pacman -S zenity inotify-tools python-pyqt5 git wget
+```
 
 ## Installation
 
@@ -64,16 +62,17 @@ Simply copy the line, paste it in a terminal and hit [Enter]. Thats it!
 wget -qO- https://raw.githubusercontent.com/apapamarkou/downloads-organizer/main/src/direct-install | bash
 ```
 
-#### For Uninstallation:
+## Uninstallation:
 
 Simply copy the line, paste it in a terminal and hit [Enter].
 
 ```bash
 wget -qO- https://raw.githubusercontent.com/apapamarkou/downloads-organizer/main/src/direct-uninstall | bash```
+```
 
 ## Usage
 
-Once installed, `Downloads Organizer` will automatically monitor your Downloads folder running in the background. It automatically starts on login. The configuration window can be launched by searching for `Downloads Organizer Config` in your applications menu.
+Once installed, **Downloads Organizer** will automatically monitor your Downloads folder running in the background. It automatically starts on login. The configuration window can be launched by searching for `Downloads Organizer Config` in your applications menu.
 
 ## License
 
