@@ -101,16 +101,16 @@ Categories=Utility;
 " > "$DESKTOP_FILE"
 
     echo "[organize]
-organizeActive = true
-documents = $HOME/Documents
-documentsFolder = true
-pictures = true
-picturesFolder = $HOME/Pictures
-videos = true
-videosFolder = $HOME/Videos
-packages = true
-archives = true
-imagesFolder = $HOME/Downloads
+organizeActive=true
+documents=$HOME/Documents
+documentsFolder=true
+pictures=true
+picturesFolder=$HOME/Pictures
+videos=true
+videosFolder=$HOME/Videos
+packages=true
+archives=true
+imagesFolder=$HOME/Downloads
 " > "$INSTALL_DIR/downloads-organizer.conf"
 
 
