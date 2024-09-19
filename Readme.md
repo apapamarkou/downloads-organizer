@@ -51,7 +51,7 @@ sudo pacman -S --needed zenity inotify-tools python-pyqt5 git wget
 - Solus
 
 ```bash
-sudo pacman -S zenity inotify-tools python-pyqt5 git wget
+sudo eopkg install zenity inotify-tools python-pyqt5 git wget
 ```
 
 ## Installation
