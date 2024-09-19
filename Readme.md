@@ -83,6 +83,3 @@ See the [LICENSE](https://github.com/apapamarkou/downloads-organizer/blob/main/L
 
 Feel free to fork this repository and submit pull requests. If you encounter any issues, please report them on the GitHub issues page.
 
-## Contact
-
-For any queries, you can reach out at: apapamarkou@yahoo.com
