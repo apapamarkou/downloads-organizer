@@ -49,6 +49,7 @@ if [ "$organizeActive" != "true" ]; then
 fi
 
 # Monitor the Downloads directory for new files
+notify-send "Downloads Observer" "Monitoring the Downloads directory for new files." -i "$BIN_DIR/downloads-organizer.png" -t 3000
 inotifywait -m -e create "$WATCH_DIR" --format '%w%f' | while read FILEPATH
 do
     EXT="${FILEPATH##*.}"
@@ -96,5 +97,5 @@ do
                 ;;
         esac
     fi
-
 done
+notify-send "Downloads Observer" "Monitoring stopped." -i "$BIN_DIR/downloads-organizer.png" -t 3000
