@@ -17,8 +17,6 @@
 # It checks for dependencies, displays a terms and conditions dialog, and copies
 # the necessary files to the appropriate locations.
 
-
-
 # Variables
 INSTALL_DIR="$HOME/.local/bin/downloads-organizer"
 ICON_DIR="$HOME/.local/share/icons"
@@ -39,7 +37,7 @@ check_dependencies() {
 
 # Function to display terms and conditions
 show_terms_and_conditions() {
-    zenity --text-info --title="Terms and Conditions" --filename="$SRC_DIR/terms.txt" --checkbox="I agree to the terms and conditions" --width=650 --height=300
+    zenity --text-info --title="Terms and Conditions" --filename="$SRC_DIR/terms.txt" --checkbox="I agree to the terms and conditions" --width=400 --height=600
     if [ $? -ne 0 ]; then
         zenity --error --text="You must agree to the terms and conditions to proceed with installation." --width=300
         exit 1
@@ -76,7 +74,7 @@ install_files() {
     cp "$SRC_DIR/downloads-organizer.png" "$ICON_DIR"
 
     # Create the .desktop file
-    echo "Create the .desktop file"
+    echo "Create the downloads-observer.desktop file"
     DESKTOP_FILE="$DESKTOP_DIR/downloads-observer.desktop"
     echo "[Desktop Entry]
 Name=Downloads Organizer
@@ -87,15 +85,15 @@ Categories=Utility;
 " > "$DESKTOP_FILE"
 
     # Add to autostart
-    echo "Add to autostart"
+    echo "Add downloads-observer.desktop to autostart"
     cp "$DESKTOP_FILE" "$AUTOSTART_DIR"
 
 # Create the downloads-organizer-config.desktop file
     DESKTOP_FILE="$DESKTOP_DIR/downloads-organizer-config.desktop"
     echo "[Desktop Entry]
-Name=Downloads Organizer
+Name=Downloads Organizer Config
 Exec=$INSTALL_DIR/downloads-organizer-config.py
-Icon=$ICON_DIR/download-organizer.png
+Icon=$ICON_DIR/downloads-organizer.png
 Type=Application
 Categories=Utility;
 " > "$DESKTOP_FILE"
@@ -113,15 +111,11 @@ archives=true
 imagesFolder=$HOME/Downloads
 " > "$INSTALL_DIR/downloads-organizer.conf"
 
-
-    # Run the observer script
-    echo "Run the observer script"
-    "$INSTALL_DIR/downloads-observer.sh" &
 }
 
 # Function to thank the user
 thank_user() {
-    zenity --info --text="Downloads Organizer has been installed. Thank you for using Desktop Organizer" --width=300
+    zenity --info --text="Downloads Organizer has been installed.\nIt will start at the next login.\n\nThank you for using Desktop Organizer\n" --width=300
 }
 
 # Main function
@@ -139,7 +133,8 @@ main() {
     install_files
 
     # Thank the user
-    echo "Thank the user"
+    echo "Thank you for using Download Organizer."
+    echo "The service will be activated at the next login."
     thank_user
 }
 

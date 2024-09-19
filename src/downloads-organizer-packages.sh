@@ -41,7 +41,7 @@ install_package() {
     if [ -n "$TERMINAL" ]; then
         $TERMINAL -e "$1"
     else
-        zenity --error --text="No terminal emulator found!"
+        zenity --error --text="Please install a terminal emulator and try again." --width=300
     fi
 }
 

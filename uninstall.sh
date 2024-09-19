@@ -20,7 +20,8 @@
 # Variables
 INSTALL_DIR="$HOME/.local/bin/downloads-organizer"
 ICON_DIR="$HOME/.local/share/icons/downloads-organizer.png"
-DESKTOP_FILE="$HOME/.local/share/applications/downloads-observer.desktop"
+DESKTOP_FILE_OBSERVER="$HOME/.local/share/applications/downloads-observer.desktop"
+DESKTOP_FILE_CONFIG="$HOME/.local/share/applications/downloads-organizer-config.desktop"
 AUTOSTART_FILE="$HOME/.config/autostart/downloads-observer.desktop"
 OBSERVER_SCRIPT="$INSTALL_DIR/downloads-observer.sh"
 
@@ -49,8 +50,9 @@ remove_files() {
         rm -f "$ICON_DIR"
     fi
 
-    if [ -f "$DESKTOP_FILE" ]; then
-        rm -f "$DESKTOP_FILE"
+    if [ -f "$DESKTOP_FILE_OBSERVER" ]; then
+        rm -f "$DESKTOP_FILE_OBSERVER"
+        rm -f "$DESKTOP_FILE_CONFIG"
     fi
 
     if [ -f "$AUTOSTART_FILE" ]; then

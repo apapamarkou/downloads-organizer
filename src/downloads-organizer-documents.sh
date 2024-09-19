@@ -24,10 +24,10 @@
 FILEPATH="$1"
 FILENAME=$(basename "$FILEPATH")
 EXT="${FILENAME##*.}"
-DEFAULT_DIR="$HOME/$2s"
+DEFAULT_DIR="$HOME/$2"
 
 # Zenity save dialog for renaming and choosing the destination
-NEW_FILEPATH=$(zenity --file-selection --save --confirm-overwrite --title="Save $2 As" --filename="$DEFAULT_DIR/$FILENAME")
+NEW_FILEPATH=$(zenity --file-selection --save --confirm-overwrite --title="Save As" --filename="$DEFAULT_DIR/$FILENAME")
 
 # Check if cancel was pressed
 if [ -z "$NEW_FILEPATH" ]; then
@@ -45,8 +45,8 @@ fi
 # Move the file to the new location
 mv "$FILEPATH" "$NEW_FILEPATH"
 
-# Zenity for asking if the file should be opened
-zenity --question --text="Do you want to open the $2?"
+# Zenity for asking if the file should be opened showing the filename only
+zenity --question --text="Do you want to open the $FILENAME?"
 
 if [ $? -eq 0 ]; then
     xdg-open "$NEW_FILEPATH"

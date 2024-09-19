@@ -6,7 +6,7 @@ Downloads Organizer is an open-source utility designed to help users manage and 
 
 2. License
 
-Downloads Organizer is released under the [Insert License Type] License. By using this software, you agree to the terms of this license, which allows for free use, modification, and distribution of the software under specific conditions. Please refer to the LICENSE.txt file for full details.
+Downloads Organizer is released under the GNU License. By using this software, you agree to the terms of this license, which allows for free use, modification, and distribution of the software under specific conditions. Please refer to the LICENSE.txt file for full details.
 
 3. Disclaimer of Warranty
 

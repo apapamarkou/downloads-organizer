@@ -39,20 +39,15 @@ if [ -f "$CONFIG_FILE" ]; then
     source "$CONFIG_FILE"
 else
     echo "Configuration file not found. Exiting."
+    zenity --error --text="Configuration file not found. Exiting." --title="Downloads Organizer" --width=300
     exit 1
-fi
-
-# Check if organizing is active
-if [ "$organizeActive" != "true" ]; then
-    echo "Organizing is not active. Exiting."
-    exit 0
 fi
 
 # Monitor the Downloads directory for new files
 notify-send "Downloads Observer" "Monitoring the Downloads directory for new files." -i "$BIN_DIR/downloads-organizer.png" -t 3000
 inotifywait -m -e create "$WATCH_DIR" --format '%w%f' | while read FILEPATH
 do
-    EXT="${FILEPATH##*.}"
+    EXT="${FILEPATH##*.,,}"
     # Check if organizing is active
     if [ "$organizeActive" == "true" ]; then
         case "$EXT" in
