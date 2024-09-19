@@ -38,7 +38,7 @@ import os
 import configparser
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QCheckBox, QPushButton, QFileDialog, QLabel, QHBoxLayout, QSpacerItem, QSizePolicy
 
-CONFIG_FILE = os.path.expanduser('~/.local/bin/downloads-organizer/organizer-config')
+CONFIG_FILE = os.path.expanduser('~/.local/bin/downloads-organizer/downloads-organizer.conf')
 
 class ConfigGUI(QWidget):
     def __init__(self):

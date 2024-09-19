@@ -39,7 +39,7 @@ check_dependencies() {
 
 # Function to display terms and conditions
 show_terms_and_conditions() {
-    zenity --text-info --title="Terms and Conditions" --filename="$SRC_DIR/terms.txt" --checkbox="I agree to the terms and conditions" --width=500 --height=300
+    zenity --text-info --width=600 --hight=600 --title="Terms and Conditions" --filename="$SRC_DIR/terms.txt" --checkbox="I agree to the terms and conditions" --width=500 --height=300
     if [ $? -ne 0 ]; then
         zenity --error --text="You must agree to the terms and conditions to proceed with installation." --width=300
         exit 1
@@ -90,6 +90,30 @@ Categories=Utility;
     echo "Add to autostart"
     cp "$DESKTOP_FILE" "$AUTOSTART_DIR"
 
+# Create the downloads-organizer-config.desktop file
+    DESKTOP_FILE="$DESKTOP_DIR/downloads-organizer-config.desktop"
+    echo "[Desktop Entry]
+Name=Downloads Organizer
+Exec=$INSTALL_DIR/downloads-organizer-config.py
+Icon=$ICON_DIR/download-organizer.png
+Type=Application
+Categories=Utility;
+" > "$DESKTOP_FILE"
+
+    echo "[organize]
+organizeActive = true
+documents = $HOME/Documents
+documentsFolder = true
+pictures = true
+picturesFolder = $HOME/Pictures
+videos = true
+videosFolder = $HOME/Videos
+packages = true
+archives = true
+imagesFolder = $HOME/Downloads
+" > "$INSTALL_DIR/downloads-organizer.conf"
+
+
     # Run the observer script
     echo "Run the observer script"
     "$INSTALL_DIR/downloads-observer.sh" &
@@ -97,7 +121,7 @@ Categories=Utility;
 
 # Function to thank the user
 thank_user() {
-    zenity --info --text="Downloads Organizer has been successfully installed and is now running!" --width=300
+    zenity --info --text="Downloads Organizer has been installed. Thank you for using Desktop Organizer" --width=300
 }
 
 # Main function
