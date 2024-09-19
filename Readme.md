@@ -77,7 +77,7 @@ Once installed, **Downloads Organizer** will automatically monitor your Download
 ## License
 
 This project is licensed under the GNU General Public License v3.0.
-See the `[LICENSE](https://github.com/apapamarkou/downloads-organizer/blob/main/LICENSE)` file for more details.
+See the [LICENSE](https://github.com/apapamarkou/downloads-organizer/blob/main/LICENSE) file for more details.
 
 ## Contributing
 
